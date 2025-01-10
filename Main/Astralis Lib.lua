@@ -462,7 +462,7 @@ Library v0.36 [
 ]]
 local library = {
 	Version = "0.36",
-	WorkspaceName = "Astralis Lib",
+	WorkspaceName = "Astralis",
 	flags = {},
 	signals = {},
 	objects = {},
@@ -2005,8 +2005,8 @@ function library:CreateWindow(options, ...)
 	if windowName and #windowName > 0 and library.WorkspaceName == "Astralis" then
 		library.WorkspaceName = convertfilename(windowName, "Astralis")
 	end
-	local pepsiLibrary = Instance_new("ScreenGui")
-	library.MainScreenGui, MainScreenGui = pepsiLibrary, pepsiLibrary
+	local astralisLibrary = Instance_new("ScreenGui")
+	library.MainScreenGui, MainScreenGui = astralisLibrary, astralisLibrary
 	local main = Instance_new("Frame")
 	local mainBorder = Instance_new("Frame")
 	local tabSlider = Instance_new("Frame")
@@ -2023,13 +2023,13 @@ function library:CreateWindow(options, ...)
 	library.globals["__Window" .. options.Name] = {
 		submenuOpen = submenuOpen
 	}
-	pepsiLibrary.Name = "     "
-	pepsiLibrary.Parent = library.gui_parent
-	pepsiLibrary.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	pepsiLibrary.DisplayOrder = 10
-	pepsiLibrary.ResetOnSpawn = false
+	astralisLibrary.Name = "     "
+	astralisLibrary.Parent = library.gui_parent
+	astralisLibrary.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	astralisLibrary.DisplayOrder = 10
+	astralisLibrary.ResetOnSpawn = false
 	main.Name = "main"
-	main.Parent = pepsiLibrary
+	main.Parent = astralisLibrary
 	main.AnchorPoint = Vector2.new(0.5, 0.5)
 	main.BackgroundColor3 = library.colors.background
 	colored[1 + #colored] = {main, "BackgroundColor3", "background"}
@@ -2187,7 +2187,7 @@ function library:CreateWindow(options, ...)
 	windowFunctions.LastTab = nil
 	function windowFunctions:CreateTab(options, ...)
 		options = (options and (type(options) == "string") and resolvevararg("Tab", options, ...)) or options or {
-			Name = "Pepsi Style: Elite Lego Hax"
+			Name = "astralis Style: Elite Lego Hax"
 		}
 		local image = options.Image
 		if image then
